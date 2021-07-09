@@ -7,8 +7,7 @@ import numpy as np
 import pandas as pd
 
 dir = ""
-images_dir = "{}/fruits".format(dir)
-numpy_dir = "{}/numpy".format(dir)
+numpy_dir = "numpy".format(dir)
 
 class_names = sorted([file.split(".")[0] for file in os.listdir(numpy_dir)])
 figs = [class_name for class_name in class_names if "fig" in class_name]

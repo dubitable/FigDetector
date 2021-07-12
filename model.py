@@ -6,7 +6,12 @@ import os, pickle, random
 import numpy as np
 import pandas as pd
 
+<<<<<<< HEAD
 numpy_dir = "numpy"
+=======
+dir = ""
+numpy_dir = "numpy".format(dir)
+>>>>>>> 8dd0281819324dc7880c9c9bc711a1469cdd6044
 
 class_names = sorted([file.split(".")[0] for file in os.listdir(numpy_dir)])
 figs = [class_name for class_name in class_names if "fig" in class_name]
@@ -38,6 +43,7 @@ model = tf.keras.Sequential([
 
 model.compile(optimizer="adam", loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=["accuracy"])
 
+<<<<<<< HEAD
 checkpoint_path = "checkpoints/cp.ckpt"
 checkpoint_dir = os.path.dirname(checkpoint_path)
 
@@ -46,3 +52,6 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
                                                  verbose=1)
                                                  
 model.fit(images, labels, epochs=10, callbacks=[cp_callback]))
+=======
+model.fit(images, labels, epochs=10)
+>>>>>>> 8dd0281819324dc7880c9c9bc711a1469cdd6044

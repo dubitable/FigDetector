@@ -28,12 +28,6 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
  
-
-AUTOTUNE = tf.data.AUTOTUNE
-
-train_ds = train_ds.cache().prefetch(buffer_size=AUTOTUNE)
-val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
-
 model = tf.keras.Sequential([
   tf.keras.layers.experimental.preprocessing.Rescaling(1./255),
   tf.keras.layers.Conv2D(32, 3, activation='relu'),
